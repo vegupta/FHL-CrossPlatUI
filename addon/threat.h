@@ -3,7 +3,7 @@ class Threat {
    public:
 	std::string name;
 	std::string type;
-	std::string status;
+	std::string path;
 
 public:
     // Parameterized Constructor
@@ -11,7 +11,7 @@ public:
     {
         name = n;
         type = t;
-        status = s;
+        path = s;
     }
     
     Threat() {

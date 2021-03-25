@@ -1,20 +1,20 @@
 <div class="threat-list-container">
-  <clr-datagrid>
+  <clr-datagrid (clrDgRefresh)="refresh($event)" [clrDgLoading]="loading">
     <clr-dg-column>Threat Name</clr-dg-column>
-    <clr-dg-column>Threat Status</clr-dg-column>
+    <clr-dg-column>Threat Type</clr-dg-column>
 
     <clr-dg-row *ngFor="let threat of threats">
       <clr-dg-cell>{{threat.name}}</clr-dg-cell>
-      <clr-dg-cell>{{threat.status}}</clr-dg-cell>
+      <clr-dg-cell>{{threat.type}}</clr-dg-cell>
       <clr-dg-row-detail *clrIfExpanded>
-        <ul class="list">
-          <li *ngFor="let resource of threat.affectedResources; index as i">
-            {{ resource }}
-          </li>
-        </ul>
+        <!-- <ul class="list">
+          <li *ngFor="let resource of threat.path; index as i"> -->
+          {{"Path: "}}{{ threat.path }}
+        <!--   </li>
+        </ul> -->
       </clr-dg-row-detail>
     </clr-dg-row>
 
-    <clr-dg-footer>{{threats.length}} Threats</clr-dg-footer>
+    <clr-dg-footer>{{threats?.length}} Threats</clr-dg-footer>
   </clr-datagrid>
 </div>

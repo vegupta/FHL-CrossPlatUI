@@ -1,0 +1,1 @@
+cmd_Release/obj.target/emit_from_cpp.node := g++ -o Release/obj.target/emit_from_cpp.node -shared -pthread -rdynamic -m64  -Wl,-soname=emit_from_cpp.node -Wl,--start-group Release/obj.target/emit_from_cpp/addon/emit-from-cpp.o -Wl,--end-group -lnode
